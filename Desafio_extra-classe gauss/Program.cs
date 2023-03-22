@@ -31,6 +31,19 @@ namespace Desafio_extra_classe_gauss
                 Console.WriteLine("--------------------------------------------------------------------------------");
                 Console.WriteLine("O número escolhido " + Primos(N,check));
             }
+            else
+            {
+                string retorno = "";
+                Console.WriteLine("--------------------------------------------------------------------------------");
+                Console.Write("Digite o primeiro número: ");
+                _ = int.TryParse(Console.ReadLine(), out int N1);
+                Console.WriteLine("--------------------------------------------------------------------------------");
+                Console.Write("Digite o segundo número: ");
+                _ = int.TryParse(Console.ReadLine(), out int N2);
+                Console.WriteLine("--------------------------------------------------------------------------------");
+                Console.WriteLine("Os números " + Coprimos(N1, N2, retorno));
+
+            }
             Console.ReadKey();
         }
         static public string Primos(int N , string check)
@@ -73,7 +86,31 @@ namespace Desafio_extra_classe_gauss
                 check = "é primo";
             }
             return check;
-            
+        }
+
+        static public string Coprimos(int N1, int N2, string retorno)
+        {
+            int i = 2, j = 2, encerra = 0;
+            do
+            {
+                if (N1 % 1 == 0 && N2 % 1 == 0)
+                {
+                    retorno = "são primos entre si";
+                   
+                }
+                if (N1 % i == 0 && N2 % i == 0)
+                {
+                    retorno = "não são primos entre si";
+                    encerra++;
+                }
+                i++;
+                j++;
+
+
+
+            } while (i <= N1 && encerra != 1);
+            return retorno;
+
         }
     }
 }
