@@ -11,7 +11,6 @@ namespace Desafio_extra_classe_gauss
         static void Main(string[] args)
         {
             int escolha;
-
             do
             {
                 Console.WriteLine("Escolha o exercicio");
@@ -42,7 +41,6 @@ namespace Desafio_extra_classe_gauss
                 _ = int.TryParse(Console.ReadLine(), out int N2);
                 Console.WriteLine("--------------------------------------------------------------------------------");
                 Console.WriteLine("Os números " + Coprimos(N1, N2, retorno));
-
             }
             Console.ReadKey();
         }
@@ -72,12 +70,7 @@ namespace Desafio_extra_classe_gauss
                 }
                 i++;
             } while (i < N && encerra != 1);
-            
-               
-
-           
-            
-            return check;
+              return check;
         }
 
         static public string Coprimos(int N1, int N2, string retorno)
@@ -88,7 +81,6 @@ namespace Desafio_extra_classe_gauss
                 if (N1 % 1 == 0 && N2 % 1 == 0)
                 {
                     retorno = "são primos entre si";
-                   
                 }
                 if (N1 % i == 0 && N2 % i == 0)
                 {
@@ -97,12 +89,8 @@ namespace Desafio_extra_classe_gauss
                 }
                 i++;
                 j++;
-
-
-
             } while (i <= N1 && encerra != 1);
             return retorno;
-
         }
     }
 }
