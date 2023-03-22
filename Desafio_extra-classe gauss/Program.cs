@@ -48,43 +48,35 @@ namespace Desafio_extra_classe_gauss
         }
         static public string Primos(int N , string check)
         {
-            if (N % 2 == 0 && N != 2)
+            int i = 2, encerra = 0;
+            do
             {
-                
-                check = "não é primo";
-            }
-            else if(N == 1)
-            {
-                check = "não é primo"; 
-
-            }
-            else if(N % 3 == 0 && N != 3)
-            {
+                if(N % 1 == 0 && N % N == 0)
+                {
+                    check = "é primo";
+                }
+                if (N % i == 0)
+                {
+                    check = "Não é primo";
+                    encerra++;
+                }
+                else if(N == 1)
+                {
+                    check = "Não é primo";
+                    encerra++;
+                }
+                else
+                {
+                    check = "Não é primo";
+                    encerra++;
+                }
+                i++;
+            } while (i < N && encerra != 1);
+            
                
-                check = "não é primo";
 
-            }
-            else if (N % 5 == 0 && N != 5)
-            {
-                
-                check = "não é primo";
-
-            }
-            else if (N % 7 == 0 && N != 7)
-            {
-                
-                check = "não é primo";
-
-            }
-            else if (N % 11 == 0 && N != 11)
-            {
-                check = "não é primo";
-
-            }
-            else
-            {
-                check = "é primo";
-            }
+           
+            
             return check;
         }
 
