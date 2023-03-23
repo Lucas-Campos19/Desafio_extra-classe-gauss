@@ -63,11 +63,6 @@ namespace Desafio_extra_classe_gauss
                     check = "Não é primo";
                     encerra++;
                 }
-                else
-                {
-                    check = "Não é primo";
-                    encerra++;
-                }
                 i++;
             } while (i < N && encerra != 1);
               return check;
